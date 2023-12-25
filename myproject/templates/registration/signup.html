@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+  
+{% if not user.is_authenticated %}
+  
+
+<div class="container" style="border: static 4px lightcoral; margin-top: 200px; ">
+<form method="post">
+    {% csrf_token %}    
+    
+{% for field in form  %}
+  {{field.label_tag}}
+  <div class=" container">{{field}}</div>
+  <br>
+{% endfor %}
+
+<button class="btn btn-primary" style="margin-left: 13px;">Create Account</button>
+
+</form>
+
+</div>
+
+
+{%else%}
+<div class="container">
+    <h1>You are already have an Account</h1>
+</div>
+{%endif%}
+<!--<div class="container" style="color: gray;">
+    <h3 style="color: black;">Something went wrong.</h3>
+<ul>
+    <li>You can't use numbers in your username.</li>
+    <li>Your password must be have minimum '8' characters.</li>
+    <li>Your password must have Uppercase and lowercase characters.</li>
+    <li>Your password must have special character or characters.</li>
+</ul></div>-->
+
+
+
+{% endblock content %}

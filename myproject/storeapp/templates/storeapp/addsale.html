@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><br><br><br><br><br><br>
+<div class="container" style="border: static 8px lightcoral;">
+    <form method="POST" >
+        {% csrf_token %}
+        <label for="title">Title : </label>
+        <input type="text" id="title" name="title">
+        <br>
+        <label for="description">description : </label>
+        <input type="text" id="description" name="description">
+        <br>
+        <label for="price">Price : </label>
+        <input type="number" id="price" name="price">
+        <br>
+        <button class="btn btn-primary">Add Sale</button>
+    </form>
+
+
+
+
+</div>
+{% endblock content %}
